@@ -1,7 +1,7 @@
 var path = require("path");
 
 
-var extractFilePath = function (url) {
+var extractFilePath = function(url) {
   var filePath;
   var fileName = "index.html";
   if (url.length > 1) {
