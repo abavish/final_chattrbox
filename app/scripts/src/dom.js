@@ -18,14 +18,14 @@ export class ChatForm {
     this.$input = $(inputSel);
   }
 
-  init(submitCallback){
-      this.$form.submit((event) => {
-        event.preventDefault();
-        let val = this.$input.val();
-        submitCallback(val);
-        this.$input.val('');
-      });
-      this.$form.find('button').on('click', () => this.$form.submit());
+  init(submitCallback) {
+    this.$form.submit((event) => {
+      event.preventDefault();
+      let val = this.$input.val();
+      submitCallback(val);
+      this.$input.val('');
+    });
+    this.$form.find('button').on('click', () => this.$form.submit());
   }
 }
 
@@ -34,7 +34,11 @@ export class ChatList {
     this.$list = $(listSel);
     this.username = username;
   }
-  drawMessage({user: u, timestamp: t, message: m}) {
+  drawMessage({
+    user: u,
+    timestamp: t,
+    message: m
+  }) {
     let $messageRow = $('<li>', {
       'class': 'message-row'
     });

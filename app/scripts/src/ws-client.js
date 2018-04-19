@@ -1,6 +1,6 @@
 let socket;
 
-function init(url)  {
+function init(url) {
   socket = new WebSocket(url);
   console.log('connecting...');
 }
@@ -11,6 +11,7 @@ function registerOpenHandler(handlerFunction) {
     handlerFunction();
   };
 }
+
 function registerMessageHandler(handlerFunction) {
   socket.onmessage = (e) => {
     console.log('message', e.data);
@@ -18,6 +19,7 @@ function registerMessageHandler(handlerFunction) {
     handlerFunction(data);
   };
 }
+
 function sendMessage(payload) {
   socket.send(JSON.stringify(payload));
 }
@@ -27,4 +29,4 @@ export default {
   registerOpenHandler,
   registerMessageHandler,
   sendMessage
-}
+};

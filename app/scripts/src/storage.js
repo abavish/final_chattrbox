@@ -2,10 +2,10 @@ class Store {
   constructor(storageApi) {
     this.api = storageApi;
   }
-get() {
+  get() {
     return this.api.getItem(this.key);
   }
-set(value) {
+  set(value) {
     this.api.setItem(this.key, value);
   }
 }
